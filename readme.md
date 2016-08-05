@@ -33,7 +33,7 @@ configureRouter(config, router) {
 
 ###Data Binding
 
-Aurelia offers several types of binding: one-way, two-way, one-time, and bind. As the name implies one-time binding will happen only once, one-way will send data from the ViewModel to the view, but not vise-versa, two-way will also provide a path back to the ViewModel for data and lastly, bind will automatically choose which binding mode to use (two-way for form controls and one-way for most everything else). The syntax is simple for each of these - below is both one-way and two-way binding:
+Aurelia offers several types of binding: one-way, two-way, one-time, and bind. As the name implies one-time binding will happen only once, one-way will send data from the ViewModel to the view, but not vise versa, two-way will also provide a path back to the ViewModel for data and lastly, bind will automatically choose which binding mode to use (two-way for form controls and one-way for most everything else). The syntax is simple for each of these - below is both one-way and two-way binding:
 
 ```html
 
@@ -70,7 +70,7 @@ Aurelia offers a templating engine that is based off of [Web Components](https:/
 
 ###Views
 
-Views go hand-in-hand with templating. Aurelia makes binding Views to ViewModels very simple with it's file naming convention. A file with a `.js` extension will become the ViewModel for a file with a `.html` extension in the same folder.
+Views go hand-in-hand with templating. Aurelia makes binding Views to ViewModels very simple with its file naming convention. A file with a `.js` extension will become the ViewModel for a file with a `.html` extension in the same folder.
 
 ![File Naming Convention in Aurelia](images/file-naming-convention.png "File Naming Convention in Aurelia")
 
