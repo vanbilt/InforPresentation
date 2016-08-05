@@ -1,0 +1,28 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	padding: 10px 60px 0 60px;
+}
+
+th, td {
+	padding: 0 5px 0 5px;
+}
+
+li {
+	margin: 10px 0;
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	list-style-type: none;
+
+	li {
+		border-right: solid 1px #ff00dc;
+		padding: 0 30px;
+		width: 100px;
+		display: inline;
+	}
+}

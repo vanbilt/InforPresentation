@@ -1,0 +1,71 @@
+﻿<template>
+	<require from="./../main.css"></require>
+	<require from="./instructions.html"></require>
+	<require from="./../converters"></require>
+
+	<h1>${heading}</h1>
+
+	<div as-element="instructions"></div>
+
+	<div class="row">
+		<div class="col-xs-6">
+			<h2>Form</h2>
+			<form submit.trigger="getActivities()">
+				<div class="form-group">
+					<label for="inputEmail">Email</label>
+					<input type="email" class="form-control"
+						   id="inputEmail" value.bind="email">
+				</div>
+				<div class="form-group">
+					<label for="inputPassword">Password</label>
+					<input type="password" class="form-control"
+						   id="inputPassword" value.bind="password">
+				</div>
+				<div class="form-group">
+					<label for="inputId">Select ID:</label>
+					<select value.bind="selectedVal">
+						<option repeat.for="option of selectOptions"
+								model.bind="option">
+							${option.name}
+						</option>
+					</select>
+				</div>
+				<button type="submit"
+						class="btn btn-primary">
+					Make API Request
+				</button>
+				<button click.trigger="setCredentials()"
+						class="btn btn-secondary">
+					Fill in Credentials
+				</button>
+			</form>
+		</div>
+		<div class="col-xs-6">
+			<h2>Results</h2>
+			<div id="error" class="text-danger" css="visibility: ${error ? 'visible' : 'hidden' }">${error}</div>
+			<table id="results" class="table table-condensed" css="visibility: ${activities.length === 0 ? 'hidden' : 'visible' }">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Job</th>
+						<th>Shift</th>
+						<th>Date</th>
+						<th>Start</th>
+						<th>Stop</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr repeat.for="activity of activities">
+						<td>${activity.Person.Name}</td>
+						<td>${activity.Person.Job.Name}</td>
+						<td>${activity.Shift.Name}</td>
+						<td>${activity.Date | dateFormat}</td>
+						<td>${activity.Start | dateFormat}</td>
+						<td>${activity.Stop | dateFormat}</td>
+					</tr>
+					<!-- dynamic rows go here -->
+				</tbody>
+			</table>
+		</div>
+	</div>
+</template>
